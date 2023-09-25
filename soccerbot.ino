@@ -31,8 +31,8 @@ void loop() {
   }
   
   // convert to speed 
-  float speedA = 2.0*((((throttleY-1000.0)-(throttleX-1500.0))/((200.0/51.0)))-(127.5));
-  float speedB = 2.0*((((throttleY-1000.0)+(throttleX-1500.0))/(200.0/51.0))-(127.5));
+  float speedA = 2.0*((((throttleY-1000.0)-((throttleX-1500.0)/1))/((200.0/51.0)))-(127.5));
+  float speedB = 2.0*((((throttleY-1000.0)+((throttleX-1500.0)/1))/(200.0/51.0))-(127.5));
   // 
 
   if (speedA<0 && speedB<0){
@@ -70,7 +70,7 @@ void loop() {
   }
 
   
-  Serial.println(String(throttleX)+","+String(throttleY)+", "+String(abs(speedA))+", "+String(abs(speedB))+", ");
+  Serial.println(String(throttleX)+","+String(throttleY)+", "+String((speedA))+", "+String((speedB))+", ");
 }
   // Serial.println("throttleY" + throttleY);
   /* 
